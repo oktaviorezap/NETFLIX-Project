@@ -1,0 +1,16 @@
+# NETFLIX-Project
+
+import pandas as pd
+import numpy as np
+nflx = pd.read_csv('NFLX_Netflix Stock Price Data set 2002-2022.csv')
+nflx
+
+#Convert to Date Time
+nflx['Date'] = pd.to_datetime(nflx['Date'])
+print(nflx)
+
+nflx['Year'] = nflx['Date'].dt.year
+nflx
+
+#Save The Dataset from Jupyter Notebook
+nflx.to_excel(r'C:\Users\Oktavio Reza Putra\OneDrive\Documents\NFLX_Netflix Stock Price Data set 2002-2022.xlsx',index=False)
